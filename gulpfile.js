@@ -27,7 +27,7 @@ gulp.task('assets', () => {
   ]);
 });
 
-gulp.task('delete-dist', (cb) => {
+gulp.task('delete-dist', (cnode) => {
   exec('npm run clear-dist', (err, stdout, stderr) => {
     cb(err);
   })
