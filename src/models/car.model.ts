@@ -1,3 +1,5 @@
+import {Request, Response, NextFunction} from 'express';
+
 export class Car {
     _model: any;
     constructor(norm: any) {
@@ -16,9 +18,57 @@ export class Car {
           onDelete: 'cascade',
           onUpdate: 'cascade'
         },
-      }, 'A table to store users car model', []];
+      }, 'A table to store users car model', 
+      [
+        {route: '/get-all-cars',
+        method: 'POST',
+        callback: this.getAllCars,
+        requireToken: true,
+      },
+      {route: '/get-car-by-id/:id',
+      method: 'POST',
+      callback: this.getCarById,
+      requireToken: true,
+    }
+      ]
+    ];
+    }
+
+    getAllCars(model:any) {
+        return async (req: Request, res: Response, next: NextFunction) => {
+            req.body = {
+              
+                    get: ["*"]
+                
+            }
+             let carCtrl = model.controller;
+        
+           let resp = await carCtrl.get(req, null, null);
+           
+            res.json({ message: 'Success', resp });
+        }
     }
   
+    getCarById(model:any) {
+        return async (req: Request, res: Response, next: NextFunction) => {
+            req.body = {
+              
+                    get: ["*"],
+                    where: {
+                        id: req.params.id
+                    }
+                
+            }
+             let carCtrl = model.controller;
+          
+        
+           let resp = await carCtrl.get(req, null, null);
+           
+            res.json({ message: 'Success', resp });
+        }
+    }
+
+
     set model(model: any) {
       this._model = model;
     }
