@@ -1,0 +1,174 @@
+Endpoint: http://localhost:3002/api/v1/pizza
+Method: GET
+Params: none
+Description: Get all the pizza orders from the database
+Request Payload: none
+Response:
+{
+id: 1
+size: 'Large',
+crust: 'thin'
+sause: 'tomato'
+cheese: 'mozzarella'
+toppings: 'pepperoni'
+},
+
+{
+id: 2
+size: 'medium',
+crust: 'thick'
+sause: 'tomato'
+cheese: 'mozzarella'
+toppings: 'sausage'
+},
+_________________________________
+Description: Get a pizza order by its ID from the database
+Endpoint: http://localhost:3002/api/v1/pizza/get-pizza-by-id/1
+Method: POST
+Params: id - the pizza id
+Request Payload: none
+Response:
+{
+id: 1
+size: 'Large',
+crust: 'thin'
+sause: 'tomato'
+cheese: 'mozzarella'
+toppings: 'pepperoni'
+},
+
+Endpoint: http://localhost:3002/api/v1/pizza/get-pizza-by-id/2
+Method: POST
+Params: id - the pizza id
+Request Payload: none
+Response:
+{
+id: 2
+size: 'medium',
+crust: 'thick'
+sause: 'tomato'
+cheese: 'mozzarella'
+toppings: 'sausage'
+},
+============================================================================
+Endpoint: http://localhost:3002/api/v1/pet
+Method: GET
+Params: none
+Description: Get all the pets from the database
+Request Payload: none
+Response:
+{
+id: 1
+"animal":"dog",
+"color": "brown",
+"weight":"15lbs",
+"height":"25in"
+},
+
+{
+id: 2
+"animal":"cat",
+"color": "grey",
+"weight":"10lbs",
+"height":"18in"
+},
+
+{
+id: 3
+"animal":"cat",
+"color": "white",
+"weight":"7lbs",
+"height":"13in"
+}
+
+________________________________
+
+Description: Get a pet by its ID from the database
+Endpoint: http://localhost:3002/api/v1/pet/get-pet-by-id/1
+Method: POST
+Params: id - the pet id
+Request Payload: none
+Response:
+{
+id: 1
+"animal":"dog",
+"color": "brown",
+"weight":"15lbs",
+"height":"25in"
+},
+
+Endpoint: http://localhost:3002/api/v1/pet/get-pet-by-id/2
+Method: POST
+Params: id - the pet id
+Request Payload: none
+Response:
+{
+id: 2
+"animal":"cat",
+"color": "grey",
+"weight":"10lbs",
+"height":"18in"
+},
+
+Endpoint: http://localhost:3002/api/v1/pet/get-pet-by-id/3
+Method: POST
+Params: id - the pet id
+Request Payload: none
+Response:
+{
+id: 3
+"animal":"cat",
+"color": "white",
+"weight":"7lbs",
+"height":"13in"
+}
+============================================================================
+Endpoint: http://localhost:3002/api/v1/shoes
+Method: GET
+Params: none
+Description: Get all the store shoe orders from the database
+Request Payload: none
+Response:
+{
+id: 1
+"size":"9",
+"color": "grey",
+"brand": "Nike",
+"type":"running"
+},
+
+{
+id: 2
+"size":"7",
+"color": "black",
+"brand": "Timberland",
+"type":"boots"
+}
+_____________________________________________
+
+Description: Get shoe orders by its ID from the database
+Endpoint: http://localhost:3002/api/v1/shoes/get-shoes-by-id/1
+Method: POST
+Params: id - the shoes id
+Request Payload: none
+Response:
+{
+id: 1
+"size":"9",
+"color": "grey",
+"brand": "Nike",
+"type":"running"
+},
+
+Endpoint: http://localhost:3002/api/v1/shoes/get-shoes-by-id/2
+Method: POST
+Params: id - the shoes id
+Request Payload: none
+Response:
+{
+id: 2
+"size":"7",
+"color": "black",
+"brand": "Timberland",
+"type":"boots"
+}
