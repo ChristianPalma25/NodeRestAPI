@@ -47,8 +47,22 @@ class Pizza {
                     method: 'PUT',
                     callback: this.updatePizza,
                     requireToken: true,
+                },
+                {
+                    route: '/delete-pizza/id/:id',
+                    method: 'DELETE',
+                    callback: this.deletePizza,
+                    requireToken: true,
                 }
             ]];
+    }
+    deletePizza(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            console.log('req.body===>', req.body);
+            let petCtrl = model.controller;
+            let resp = yield petCtrl.remove(req, null, null);
+            res.json({ message: 'Success', resp });
+        });
     }
     updatePizza(model) {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {

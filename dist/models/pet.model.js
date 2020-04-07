@@ -48,9 +48,23 @@ class Pet {
                     method: 'PUT',
                     callback: this.updatePet,
                     requireToken: true,
+                },
+                {
+                    route: '/delete-pet/id/:id',
+                    method: 'DELETE',
+                    callback: this.deletePet,
+                    requireToken: true,
                 }
             ]
         ];
+    }
+    deletePet(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            console.log('req.body===>', req.body);
+            let petCtrl = model.controller;
+            let resp = yield petCtrl.remove(req, null, null);
+            res.json({ message: 'Success', resp });
+        });
     }
     updatePet(model) {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {

@@ -43,9 +43,26 @@ export class Pet {
         method: 'PUT',
         callback: this.updatePet,
         requireToken: true,
+      },
+      {
+        route: '/delete-pet/id/:id',
+        method: 'DELETE',
+        callback: this.deletePet,
+        requireToken: true,
       }
     ]
     ];
+  }
+
+  deletePet(model: any) {
+    return async (req: Request, res: Response, next: NextFunction) => {
+      console.log('req.body===>', req.body);
+      let petCtrl = model.controller;
+
+      let resp = await petCtrl.remove(req, null, null);
+
+      res.json({ message: 'Success', resp });
+    }
   }
 
   updatePet(model: any) {

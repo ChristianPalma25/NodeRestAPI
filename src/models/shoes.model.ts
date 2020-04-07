@@ -41,9 +41,25 @@ export class Shoes {
         method: 'PUT',
         callback: this.updateShoes,
         requireToken: true,
-      }
+      },
+      { route: '/delete-shoes/id/:id',
+      method: 'DELETE',
+      callback: this.deleteShoes,
+      requireToken: true,
+    }
       ]];
     }
+
+    deleteShoes(model: any) {
+        return async (req: Request, res: Response, next: NextFunction) => {
+          console.log('req.body===>', req.body);
+          let petCtrl = model.controller;
+    
+          let resp = await petCtrl.remove(req, null, null);
+    
+          res.json({ message: 'Success', resp });
+        }
+      }
 
     updateShoes(model: any) {
         return async (req: Request, res: Response, next: NextFunction) => {

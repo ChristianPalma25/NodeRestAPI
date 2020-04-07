@@ -46,8 +46,21 @@ class Shoes {
                     method: 'PUT',
                     callback: this.updateShoes,
                     requireToken: true,
+                },
+                { route: '/delete-shoes/id/:id',
+                    method: 'DELETE',
+                    callback: this.deleteShoes,
+                    requireToken: true,
                 }
             ]];
+    }
+    deleteShoes(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            console.log('req.body===>', req.body);
+            let petCtrl = model.controller;
+            let resp = yield petCtrl.remove(req, null, null);
+            res.json({ message: 'Success', resp });
+        });
     }
     updateShoes(model) {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {

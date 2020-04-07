@@ -41,9 +41,26 @@ export class Pizza {
         method: 'PUT',
         callback: this.updatePizza,
         requireToken: true,
+      },
+      {
+        route: '/delete-pizza/id/:id',
+        method: 'DELETE',
+        callback: this.deletePizza,
+        requireToken: true,
       }
       ]];
     }
+
+    deletePizza(model: any) {
+        return async (req: Request, res: Response, next: NextFunction) => {
+          console.log('req.body===>', req.body);
+          let petCtrl = model.controller;
+    
+          let resp = await petCtrl.remove(req, null, null);
+    
+          res.json({ message: 'Success', resp });
+        }
+      }
 
     updatePizza(model: any) {
         return async (req: Request, res: Response, next: NextFunction) => {
