@@ -1,0 +1,46 @@
+Description: Delete a pizza order
+Endpoint: http://localhost:3002/api/v1/pizza/id/:id
+Method: DELETE
+Params: id - The id of the pizza
+Request Payload: None
+Response:
+{
+    "data": {
+           "id": "2",
+            "size": "medium",
+            "crust": "thick"
+            "sause": "tomato"
+            "cheese": "mozzarella"
+            "toppings": "sausage"
+        },
+}
+=============================================================================================
+
+Description: Delete a pet id
+Endpoint: http://localhost:3002/api/v1/pet/id/:id
+Method: DELETE
+Params: id - The id of the pet
+Request Payload: None
+Response:
+{
+id: 2
+"animal":"cat",
+"color": "grey",
+"weight":"10lbs",
+"height":"18in"
+},
+==============================================================================================
+
+Description: Delete a shoes order
+Endpoint: http://localhost:3002/api/v1/shoes/id/:id
+Method: DELETE
+Params: id - The id of the shoes
+Request Payload: None
+Response:
+{
+"id": "1"
+"size":"9",
+"color": "grey",
+"brand": "Nike",
+"type":"running"
+}
