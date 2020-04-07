@@ -1,4 +1,4 @@
-Endpoint: http://localhost:3000/api/v1/pizza/id/:id
+Endpoint: http://localhost:3002/api/v1/pizza/id/:id
 Method: PUT
 Params: id - the id of the pizza
 Request Payload:
@@ -29,7 +29,7 @@ Reponse:
 }
 =================================================================================================
 
-Endpoint: http://localhost:3000/api/v1/pet/id/:id
+Endpoint: http://localhost:3002/api/v1/pet/id/:id
 Method: PUT
 Params: id - the id of the pet
 Request Payload:
@@ -59,7 +59,7 @@ Reponse:
 }
 ================================================================================================
 
-Endpoint: http://localhost:3000/api/v1/shoes/id/:id
+Endpoint: http://localhost:3002/api/v1/shoes/id/:id
 Method: PUT
 Params: id - the id of the shoes
 Request Payload:

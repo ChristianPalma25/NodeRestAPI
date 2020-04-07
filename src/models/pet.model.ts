@@ -43,10 +43,13 @@ export class Pet {
         method: 'PUT',
         callback: this.updatePet,
         requireToken: true,
-      }
+      },
+      
     ]
     ];
   }
+
+ 
 
   updatePet(model: any) {
     return async (req: Request, res: Response, next: NextFunction) => {

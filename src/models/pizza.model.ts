@@ -41,9 +41,12 @@ export class Pizza {
         method: 'PUT',
         callback: this.updatePizza,
         requireToken: true,
-      }
+      },
+      
       ]];
     }
+
+    
 
     updatePizza(model: any) {
         return async (req: Request, res: Response, next: NextFunction) => {

@@ -41,9 +41,11 @@ export class Shoes {
         method: 'PUT',
         callback: this.updateShoes,
         requireToken: true,
-      }
+      },
+      
       ]];
     }
+
 
     updateShoes(model: any) {
         return async (req: Request, res: Response, next: NextFunction) => {
