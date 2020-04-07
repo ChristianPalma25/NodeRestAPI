@@ -43,9 +43,11 @@ export class Shoes {
         requireToken: true,
       },
       
+    
       ]];
     }
 
+    
 
     updateShoes(model: any) {
         return async (req: Request, res: Response, next: NextFunction) => {

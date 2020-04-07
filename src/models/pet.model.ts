@@ -49,7 +49,7 @@ export class Pet {
     ];
   }
 
- 
+  
 
   updatePet(model: any) {
     return async (req: Request, res: Response, next: NextFunction) => {
