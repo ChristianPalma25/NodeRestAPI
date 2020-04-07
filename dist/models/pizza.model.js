@@ -41,8 +41,22 @@ class Pizza {
                     method: 'POST',
                     callback: this.createPizza,
                     requireToken: true,
+                },
+                {
+                    route: '/update-pizza/id/:id',
+                    method: 'PUT',
+                    callback: this.updatePizza,
+                    requireToken: true,
                 }
             ]];
+    }
+    updatePizza(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            console.log('req.body===>', req.body);
+            let petCtrl = model.controller;
+            let resp = yield petCtrl.update(req, null, null);
+            res.json({ message: 'Success', resp });
+        });
     }
     createPizza(model) {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {

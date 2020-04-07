@@ -42,9 +42,23 @@ class Pet {
                     method: 'POST',
                     callback: this.createPet,
                     requireToken: true,
+                },
+                {
+                    route: '/update-pet/id/:id',
+                    method: 'PUT',
+                    callback: this.updatePet,
+                    requireToken: true,
                 }
             ]
         ];
+    }
+    updatePet(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            console.log('req.body===>', req.body);
+            let petCtrl = model.controller;
+            let resp = yield petCtrl.update(req, null, null);
+            res.json({ message: 'Success', resp });
+        });
     }
     createPet(model) {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {

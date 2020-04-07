@@ -35,10 +35,27 @@ export class Shoes {
         method: 'POST',
         callback: this.createShoes,
         requireToken: true,
+      },
+      {
+        route: '/update-shoes/id/:id',
+        method: 'PUT',
+        callback: this.updateShoes,
+        requireToken: true,
       }
-
       ]];
     }
+
+    updateShoes(model: any) {
+        return async (req: Request, res: Response, next: NextFunction) => {
+          console.log('req.body===>', req.body);
+          let petCtrl = model.controller;
+    
+          let resp = await petCtrl.update(req, null, null);
+    
+          res.json({ message: 'Success', resp });
+        }
+      }
+
 
     createShoes(model: any) {
         return async (req: Request, res: Response, next: NextFunction) => {

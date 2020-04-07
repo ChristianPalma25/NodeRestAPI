@@ -37,9 +37,26 @@ export class Pet {
         method: 'POST',
         callback: this.createPet,
         requireToken: true,
+      },
+      {
+        route: '/update-pet/id/:id',
+        method: 'PUT',
+        callback: this.updatePet,
+        requireToken: true,
       }
     ]
     ];
+  }
+
+  updatePet(model: any) {
+    return async (req: Request, res: Response, next: NextFunction) => {
+      console.log('req.body===>', req.body);
+      let petCtrl = model.controller;
+
+      let resp = await petCtrl.update(req, null, null);
+
+      res.json({ message: 'Success', resp });
+    }
   }
 
   createPet(model: any) {

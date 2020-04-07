@@ -40,8 +40,22 @@ class Shoes {
                     method: 'POST',
                     callback: this.createShoes,
                     requireToken: true,
+                },
+                {
+                    route: '/update-shoes/id/:id',
+                    method: 'PUT',
+                    callback: this.updateShoes,
+                    requireToken: true,
                 }
             ]];
+    }
+    updateShoes(model) {
+        return (req, res, next) => __awaiter(this, void 0, void 0, function* () {
+            console.log('req.body===>', req.body);
+            let petCtrl = model.controller;
+            let resp = yield petCtrl.update(req, null, null);
+            res.json({ message: 'Success', resp });
+        });
     }
     createShoes(model) {
         return (req, res, next) => __awaiter(this, void 0, void 0, function* () {

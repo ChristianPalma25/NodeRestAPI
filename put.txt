@@ -1,0 +1,88 @@
+Endpoint: http://localhost:3000/api/v1/pizza/id/:id
+Method: PUT
+Params: id - the id of the pizza
+Request Payload:
+{
+"size": "small",
+"crust": "normal",
+"sause": "tomato",
+"cheese":"chedder",
+"toppings": "pepperoni"
+}
+Reponse: 
+{
+    "data": {
+            "id": 1,
+            "size": "small",
+            "crust": "normal",
+            "sauce": null,
+            "cheese": "chedder",
+            "toppings": "pepperoni",
+            "user_id": null,
+            "active": true,
+            "created_by": "cpalma",
+            "updated_by": "cpalma",
+            "created_at": "2020-04-03T20:51:39.542Z",
+            "updated_at": "2020-04-07T22:32:01.056Z",
+            "deleted_at": null
+        },
+}
+=================================================================================================
+
+Endpoint: http://localhost:3000/api/v1/pet/id/:id
+Method: PUT
+Params: id - the id of the pet
+Request Payload:
+{
+"animal": "dog",
+"color": "yellow",
+"height": "24in",
+"weight":"65lbs"
+}
+Reponse:
+{
+    "resp": {
+        "data": {
+            "id": 1,
+            "animal": "dog",
+            "color": "yellow",
+            "weight": "65lbs",
+            "height": "24in",
+            "user_id": null,
+            "active": true,
+            "created_by": "cpalma",
+            "updated_by": "cpalma",
+            "created_at": "2020-04-03T21:15:52.978Z",
+            "updated_at": "2020-04-07T22:38:08.795Z",
+            "deleted_at": null
+        },
+}
+================================================================================================
+
+Endpoint: http://localhost:3000/api/v1/shoes/id/:id
+Method: PUT
+Params: id - the id of the shoes
+Request Payload:
+{
+"size": "12",
+"color": "white",
+"brand": "Nike",
+"type":"running"
+}
+Reponse:
+{
+"data": {
+            "id": 3,
+            "size": "12",
+            "color": "white",
+            "brand": "Nike",
+            "type": "running",
+            "user_id": null,
+            "active": true,
+            "created_by": "cpalma",
+            "updated_by": "cpalma",
+            "created_at": "2020-04-03T21:35:48.736Z",
+            "updated_at": "2020-04-07T22:41:35.735Z",
+            "deleted_at": null
+        },
+}
