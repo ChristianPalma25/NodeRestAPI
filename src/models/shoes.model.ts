@@ -29,10 +29,27 @@ export class Shoes {
       method: 'POST',
       callback: this.getShoesById,
       requireToken: true,
-    }
+    },
+    {
+        route: '/create-shoes',
+        method: 'POST',
+        callback: this.createShoes,
+        requireToken: true,
+      }
 
       ]];
     }
+
+    createShoes(model: any) {
+        return async (req: Request, res: Response, next: NextFunction) => {
+          console.log('req.body===>', req.body);
+          let petCtrl = model.controller;
+    
+          let resp = await petCtrl.insert(req, null, null);
+    
+          res.json({ message: 'Success', resp });
+        }
+      }
 
     getAllShoes(model:any) {
         return async (req: Request, res: Response, next: NextFunction) => {

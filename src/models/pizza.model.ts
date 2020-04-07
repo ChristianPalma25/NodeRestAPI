@@ -29,9 +29,26 @@ export class Pizza {
        method: 'POST',
        callback: this.getPizzaById,
        requireToken: true,
-     }
+     },
+     {
+        route: '/create-pizza',
+        method: 'POST',
+        callback: this.createPizza,
+        requireToken: true,
+      }
       ]];
     }
+
+    createPizza(model: any) {
+        return async (req: Request, res: Response, next: NextFunction) => {
+          console.log('req.body===>', req.body);
+          let petCtrl = model.controller;
+    
+          let resp = await petCtrl.insert(req, null, null);
+    
+          res.json({ message: 'Success', resp });
+        }
+      }
   
     getAllPizzas(model:any) {
         return async (req: Request, res: Response, next: NextFunction) => {
